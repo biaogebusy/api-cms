@@ -6,8 +6,8 @@ package: Core
 # core: 8.x
 configure: entity.action.collection
 
-# Information added by Drupal.org packaging script on 2019-05-23
-version: '8.7.2'
+# Information added by Drupal.org packaging script on 2019-06-05
+version: '8.7.3'
 core: '8.x'
 project: 'drupal'
-datestamp: 1558597129
+datestamp: 1559762708
