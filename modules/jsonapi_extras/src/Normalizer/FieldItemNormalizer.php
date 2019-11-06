@@ -6,6 +6,7 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\jsonapi\Normalizer\FieldItemNormalizer as JsonapiFieldItemNormalizer;
 use Drupal\jsonapi\Normalizer\Value\CacheableNormalization;
 use Drupal\jsonapi_extras\Plugin\ResourceFieldEnhancerManager;
+use Shaper\Util\Context;
 
 /**
  * Converts the Drupal field structure to a JSON:API array structure.
@@ -56,7 +57,8 @@ class FieldItemNormalizer extends JsonApiNormalizerDecoratorBase {
       return $normalized_output;
     }
     // Apply any enhancements necessary.
-    $processed = $enhancer->undoTransform($normalized_output->getNormalization());
+    $context['field_item_object'] = $object;
+    $processed = $enhancer->undoTransform($normalized_output->getNormalization(), new Context($context));
     $normalized_output = new CacheableNormalization($normalized_output, $processed);
 
     return $normalized_output;

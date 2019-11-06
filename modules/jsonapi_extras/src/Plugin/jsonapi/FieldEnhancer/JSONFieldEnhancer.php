@@ -8,7 +8,6 @@ use Drupal\jsonapi_extras\Plugin\ResourceFieldEnhancerBase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Shaper\Util\Context;
 
-
 /**
  * Perform additional manipulations to JSON fields.
  *
@@ -21,16 +20,23 @@ use Shaper\Util\Context;
 class JSONFieldEnhancer extends ResourceFieldEnhancerBase implements ContainerFactoryPluginInterface {
 
   /**
+   * The serialization json.
+   *
    * @var Drupal\Component\serialization\Json
    */
   protected $encoder;
 
   /**
+   * Constructs a new JSONFieldEnhancer.
    *
    * @param array $configuration
+   *   A configuration array containing information about the plugin instance.
    * @param string $plugin_id
-   * @param $plugin_definition
+   *   The plugin_id for the plugin instance.
+   * @param mixed $plugin_definition
+   *   The plugin implementation definition.
    * @param \Drupal\Component\Serialization\Json $encoder
+   *   The serialization json.
    */
   public function __construct(array $configuration, string $plugin_id, $plugin_definition, Json $encoder) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
@@ -73,8 +79,8 @@ class JSONFieldEnhancer extends ResourceFieldEnhancerBase implements ContainerFa
       'oneOf' => [
         ['type' => 'object'],
         ['type' => 'array'],
-        ['type' => 'null']
-      ]
+        ['type' => 'null'],
+      ],
     ];
   }
 

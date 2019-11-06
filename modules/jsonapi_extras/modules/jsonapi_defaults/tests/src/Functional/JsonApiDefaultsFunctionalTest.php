@@ -13,6 +13,9 @@ use Drupal\Tests\jsonapi_extras\Functional\JsonApiExtrasFunctionalTestBase;
  */
 class JsonApiDefaultsFunctionalTest extends JsonApiExtrasFunctionalTestBase {
 
+  /**
+   * {@inheritdoc}
+   */
   public static $modules = [
     'jsonapi_defaults',
   ];

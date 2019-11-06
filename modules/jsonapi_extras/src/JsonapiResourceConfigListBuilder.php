@@ -135,7 +135,16 @@ class JsonapiResourceConfigListBuilder extends ConfigEntityListBuilder {
     }
 
     $prefix = $this->config->get('path_prefix');
-    foreach ($this->resourceTypeRepository->all() as $resource_type) {
+    /** @var \Drupal\jsonapi_extras\ResourceType\ConfigurableResourceType[] $resource_types */
+    $resource_types = $this->resourceTypeRepository->all();
+    foreach ($resource_types as $resource_type) {
+      /** @var \Drupal\jsonapi_extras\Entity\JsonapiResourceConfig $resource_config */
+      $resource_config = $resource_type->getJsonapiResourceConfig();
+
+      if ($resource_type->isInternal() && !$resource_config->get('disabled')) {
+        continue;
+      }
+
       /** @var \Drupal\jsonapi_extras\ResourceType\ConfigurableResourceType $resource_type */
       $entity_type_id = $resource_type->getEntityTypeId();
       $bundle = $resource_type->getBundle();
@@ -172,8 +181,6 @@ class JsonapiResourceConfigListBuilder extends ConfigEntityListBuilder {
         ],
       ];
 
-      /** @var \Drupal\jsonapi_extras\Entity\JsonapiResourceConfig $resource_config */
-      $resource_config = $resource_type->getJsonapiResourceConfig();
       if (!$resource_config instanceof NullJsonapiResourceConfig) {
         $row['state']['#value'] = $this->t('Overwritten');
         $row['state']['#attributes']['class'][] = 'label--overwritten';

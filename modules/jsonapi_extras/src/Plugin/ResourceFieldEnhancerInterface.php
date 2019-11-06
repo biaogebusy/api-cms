@@ -2,7 +2,6 @@
 
 namespace Drupal\jsonapi_extras\Plugin;
 
-use Drupal\Component\Plugin\ConfigurablePluginInterface;
 use Shaper\DataAdaptor\ReversibleTransformationInterface;
 use Shaper\DataAdaptor\ReversibleTransformationValidationInterface;
 use Shaper\Transformation\TransformationInterface;

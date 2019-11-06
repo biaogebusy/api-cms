@@ -10,6 +10,7 @@ use Drupal\field\Entity\FieldStorageConfig;
 use Drupal\jsonapi_extras\Entity\JsonapiResourceConfig;
 use Drupal\node\Entity\Node;
 use Drupal\node\Entity\NodeType;
+use Drupal\taxonomy\Entity\Vocabulary;
 use Drupal\Tests\jsonapi\Functional\JsonApiFunctionalTestBase;
 use Drupal\user\Entity\Role;
 use Drupal\user\Entity\User;
@@ -22,6 +23,9 @@ use Symfony\Component\Routing\Route;
  */
 class JsonApiExtrasFunctionalTest extends JsonApiFunctionalTestBase {
 
+  /**
+   * {@inheritdoc}
+   */
   public static $modules = [
     'jsonapi_extras',
     'basic_auth',
@@ -511,6 +515,28 @@ class JsonApiExtrasFunctionalTest extends JsonApiFunctionalTestBase {
         ],
       ],
     ])->save();
+  }
+
+  /**
+   * Test disabled resource show in admin list.
+   */
+  public function testDisabledResourcesShowInAdminList() {
+    $vocabulary = Vocabulary::create([
+      'name' => $this->randomMachineName(),
+      'vid' => mb_strtolower($this->randomMachineName()),
+    ]);
+    $vocabulary->save();
+    $admin_user = $this->createUser([], 'test_admin_user', TRUE);
+    $this->drupalLogin($admin_user);
+
+    $this->drupalGet('/admin/config/services/jsonapi/resource_types');
+    // print_r($this->getSession()->getPage()->getContent());
+    $this->assertSession()
+      ->elementContains('css', '#jsonapi-enabled-resources-list', 'taxonomy_term--' . $vocabulary->id());
+    $this->drupalGet('/admin/config/services/jsonapi/add/resource_types/taxonomy_term/' . $vocabulary->id());
+    $this->getSession()->getPage()->checkField('edit-disabled');
+    $this->getSession()->getPage()->pressButton('edit-submit');
+    $this->assertSession()->elementContains('css', '#jsonapi-disabled-resources-list', 'taxonomy_term--' . $vocabulary->id());
   }
 
 }

@@ -13,6 +13,9 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  */
 class JsonapiExtrasSettingsForm extends ConfigFormBase {
 
+  /**
+   * {@inheritdoc}
+   */
   protected $routerBuilder;
 
   /**

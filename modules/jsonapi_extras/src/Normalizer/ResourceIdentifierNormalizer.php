@@ -49,6 +49,7 @@ class ResourceIdentifierNormalizer extends JsonApiNormalizerDecoratorBase {
       return $normalized_output;
     }
     // Apply any enhancements necessary.
+    $context['field_resource_identifier'] = $field;
     $transformed = $enhancer->undoTransform($normalized_output->getNormalization(), new Context($context));
     // @TODO: Enhancers should utilize CacheableNormalization to infer additional cacheability from the enhancer.
     return new CacheableNormalization(

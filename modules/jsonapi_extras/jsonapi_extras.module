@@ -49,6 +49,6 @@ function jsonapi_extras_theme() {
  *   - elements: An associative array containing a Form API structure to be
  *     rendered as a table.
  */
-function template_preprocess_expandable_rows_table(&$variables) {
+function template_preprocess_expandable_rows_table(array &$variables) {
   template_preprocess_table($variables);
 }

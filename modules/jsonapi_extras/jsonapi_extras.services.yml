@@ -1,4 +1,14 @@
 services:
+  jsonapi_extras.resource_type.repository:
+    public: false
+    class: Drupal\jsonapi_extras\ResourceType\ConfigurableResourceTypeRepository
+    decorates: jsonapi.resource_type.repository
+    parent: jsonapi.resource_type.repository
+    calls:
+      - [setEntityRepository, ['@entity.repository']]
+      - [setEnhancerManager, ['@plugin.manager.resource_field_enhancer']]
+      - [setConfigFactory, ['@config.factory']]
+
   serializer.normalizer.field_item.jsonapi_extras:
     class: Drupal\jsonapi\Normalizer\ImpostorFrom\jsonapi_extras\FieldItemNormalizerImpostor
     decorates: serializer.normalizer.field_item.jsonapi

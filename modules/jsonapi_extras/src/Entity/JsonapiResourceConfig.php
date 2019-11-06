@@ -38,6 +38,13 @@ use Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
  *     "label" = "label",
  *     "uuid" = "uuid"
  *   },
+ *   config_export = {
+ *     "id",
+ *     "disabled",
+ *     "path",
+ *     "resourceType",
+ *     "resourceFields",
+ *   },
  *   links = {
  *     "add-form" = "/admin/config/services/jsonapi/add/resource_types/{entity_type_id}/{bundle}",
  *     "edit-form" = "/admin/config/services/jsonapi/resource_types/{jsonapi_resource_config}/edit",
