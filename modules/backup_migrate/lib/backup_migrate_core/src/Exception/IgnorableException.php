@@ -1,12 +1,6 @@
 <?php
-/**
- * @file
- * Contains BackupMigrate\Core\Exception\IgnorableException.
- */
-
 
 namespace BackupMigrate\Core\Exception;
-
 
 /**
  * Class IgnorableException.

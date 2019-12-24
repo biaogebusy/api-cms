@@ -2,7 +2,7 @@
 
 backup_migrate.profile.*:
   type: config_entity
-  label: 'Backup and Migrate settings profile'
+  label: 'Backup and Migrate profile'
   mapping:
     name:
       type: string
@@ -55,7 +55,7 @@ backup_migrate.backup_migrate_schedule.*:
 
 backup_migrate.backup_migrate_settings.*:
   type: config_entity
-  label: 'Backup and Migrate Settings Profile'
+  label: 'Backup and Migrate Settings'
   mapping:
     id:
       type: string

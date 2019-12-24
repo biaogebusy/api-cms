@@ -1,10 +1,6 @@
 <?php
-/**
- * @file
- */
 
 namespace BackupMigrate\Core\Config;
-
 
 /**
  * Interface ValidationErrorInterface.

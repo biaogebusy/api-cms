@@ -1,12 +1,6 @@
 <?php
-/**
- * @file
- * Contains BackupMigrate\Core\Service\TarArchiver.
- */
-
 
 namespace BackupMigrate\Core\Service;
-
 
 use BackupMigrate\Core\File\BackupFileWritableInterface;
 

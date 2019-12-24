@@ -28,7 +28,9 @@ class DrupalMySQLiSource extends MySQLiSource {
         if ($line) {
           // Execute the sql query from the file.
           $stmt = $conn->prepare($line);
-          if(!$stmt) return false;
+          if (!$stmt) {
+            return FALSE;
+          }
           $stmt->execute();
           $num++;
         }

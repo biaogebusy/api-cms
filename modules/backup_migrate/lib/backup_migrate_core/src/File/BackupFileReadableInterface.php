@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \BackupMigrate\Core\File\BackupFileReadableInterface.
- */
-
 namespace BackupMigrate\Core\File;
 
 /**

@@ -1,12 +1,6 @@
 <?php
-/**
- * @file
- * Contains BackupMigrate\Core\Tests\Service\TeeLogger.
- */
-
 
 namespace BackupMigrate\Core\Service;
-
 
 use Psr\Log\AbstractLogger;
 use Psr\Log\LoggerInterface;

@@ -1,12 +1,6 @@
 <?php
-/**
- * @file
- * Contains BackupMigrate\Core\Destination\ServerDirectoryDestination.
- */
-
 
 namespace BackupMigrate\Core\Destination;
-
 
 use BackupMigrate\Core\Config\ConfigurableInterface;
 use BackupMigrate\Core\Exception\DestinationNotWritableException;

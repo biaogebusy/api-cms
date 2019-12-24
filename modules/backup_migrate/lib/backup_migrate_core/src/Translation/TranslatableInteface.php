@@ -1,10 +1,6 @@
 <?php
-/**
- * @file
- */
 
 namespace BackupMigrate\Core\Translation;
-
 
 /**
  * Interface TranslatableInteface.

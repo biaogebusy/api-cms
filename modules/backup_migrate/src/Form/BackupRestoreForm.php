@@ -75,6 +75,7 @@ class BackupRestoreForm extends ConfirmFormBase {
 
     $conf_schema = $bam->plugins()->map('configSchema', ['operation' => 'restore']);
     $form += DrupalConfigHelper::buildFormFromSchema($conf_schema, $bam->plugins()->config());
+    $form += DrupalConfigHelper::buildAllPluginsForm($bam->plugins(), 'restore');
 
     return parent::buildForm($form, $form_state);
   }

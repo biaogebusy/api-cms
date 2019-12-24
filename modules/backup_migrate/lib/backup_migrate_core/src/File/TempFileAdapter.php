@@ -1,11 +1,7 @@
 <?php
 
-/**
- * @file
- * Contains \BackupMigrate\Core\Services\TempFileManager.
- */
-
 namespace BackupMigrate\Core\File;
+
 use BackupMigrate\Core\Exception\BackupMigrateException;
 
 /**

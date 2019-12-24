@@ -1,12 +1,6 @@
 <?php
-/**
- * @file
- * Contains BackupMigrate\Core\Filter\FileExcludeFilter.
- */
-
 
 namespace BackupMigrate\Core\Filter;
-
 
 use BackupMigrate\Core\Config\Config;
 use BackupMigrate\Core\Plugin\PluginBase;

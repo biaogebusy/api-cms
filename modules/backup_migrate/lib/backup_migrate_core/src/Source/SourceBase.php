@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \BackupMigrate\Core\Source\SourceBase.
- */
-
 namespace BackupMigrate\Core\Source;
 
 use BackupMigrate\Core\Plugin\FileProcessorInterface;

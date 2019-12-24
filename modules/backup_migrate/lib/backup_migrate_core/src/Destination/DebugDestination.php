@@ -1,12 +1,6 @@
 <?php
-/**
- * @file
- * Contains BackupMigrate\Core\Destination\DebugDestination.
- */
-
 
 namespace BackupMigrate\Core\Destination;
-
 
 use BackupMigrate\Core\Config\Config;
 use BackupMigrate\Core\File\BackupFileReadableInterface;

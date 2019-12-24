@@ -1,9 +1,5 @@
 <?php
 
-/**
- * @file
- */
-
 namespace BackupMigrate\Core\Filter;
 
 use BackupMigrate\Core\Config\Config;

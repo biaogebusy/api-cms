@@ -1,10 +1,6 @@
 <?php
-/**
- * @file
- */
 
 namespace BackupMigrate\Core\Translation;
-
 
 /**
  * This trait can be used to implement the TranslatableInterface.
@@ -18,6 +14,7 @@ namespace BackupMigrate\Core\Translation;
  * @package BackupMigrate\Core\Translation
  */
 trait TranslatableTrait {
+
   /**
    * @var TranslatorInterface;
    */

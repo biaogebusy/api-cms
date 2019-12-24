@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \BackupMigrate\Core\File\BackupFile.
- */
-
 namespace BackupMigrate\Core\File;
 
 use BackupMigrate\Core\File\BackupFileInterface;
@@ -15,6 +10,7 @@ use BackupMigrate\Core\File\BackupFileInterface;
  * @package BackupMigrate\Core\File
  */
 class BackupFile implements BackupFileInterface {
+
   /**
    * The file info (size, timestamp, etc.).
    *

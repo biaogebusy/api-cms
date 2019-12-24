@@ -1,12 +1,6 @@
 <?php
 
-/**
- * @file
- */
-
-
 namespace BackupMigrate\Core\Destination;
-
 
 /**
  * Interface RemoteDestinationInterface.

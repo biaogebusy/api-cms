@@ -1,7 +1,4 @@
 <?php
-/**
- * @file
- */
 
 namespace BackupMigrate\Core\Plugin;
 

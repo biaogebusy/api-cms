@@ -1,9 +1,4 @@
 <?php
-/**
- * @file
- * Contains BackupMigrate\Core\Plugin\PluginManager.
- */
-
 
 namespace BackupMigrate\Core\Plugin;
 

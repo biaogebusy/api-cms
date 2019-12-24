@@ -1,12 +1,6 @@
 <?php
-/**
- * @file
- * Contains BackupMigrate\Core\Config\ValidationError.
- */
-
 
 namespace BackupMigrate\Core\Config;
-
 
 /**
  * Class ValidationError.

@@ -1,10 +1,6 @@
 <?php
-/**
- * @file
- */
 
 namespace BackupMigrate\Core\Plugin;
-
 
 use BackupMigrate\Core\File\TempFileManagerInterface;
 

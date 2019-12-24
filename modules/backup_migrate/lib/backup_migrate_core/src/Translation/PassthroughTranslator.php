@@ -1,12 +1,6 @@
 <?php
-/**
- * @file
- * Contains BackupMigrate\Core\Service\PassthroughTranslator.
- */
-
 
 namespace BackupMigrate\Core\Translation;
-
 
 use BackupMigrate\Core\Translation\TranslatorInterface;
 
@@ -27,6 +21,7 @@ class PassthroughTranslator implements TranslatorInterface {
    *  Any untranslatable variables to be replaced into the string.
    * @param $context
    *  Extra context to help translators distinguish ambiguous strings.
+   *
    * @return mixed
    */
   public function translate($string, $replacements = [], $context = []) {

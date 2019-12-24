@@ -1,12 +1,6 @@
 <?php
-/**
- * @file
- * Contains BackupMigrate\Core\Plugin\PluginCallerTrait.
- */
-
 
 namespace BackupMigrate\Core\Plugin;
-
 
 use BackupMigrate\Core\Plugin\PluginManagerInterface;
 

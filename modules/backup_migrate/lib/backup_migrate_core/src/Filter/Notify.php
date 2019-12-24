@@ -1,12 +1,6 @@
 <?php
-/**
- * @file
- * Contains BackupMigrate\Core\Filter\Notify
- */
-
 
 namespace BackupMigrate\Core\Filter;
-
 
 use BackupMigrate\Core\Plugin\PluginBase;
 use BackupMigrate\Core\Plugin\PluginCallerInterface;

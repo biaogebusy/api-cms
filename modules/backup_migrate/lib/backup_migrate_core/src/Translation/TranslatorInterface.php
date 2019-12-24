@@ -1,10 +1,6 @@
 <?php
-/**
- * @file
- */
 
 namespace BackupMigrate\Core\Translation;
-
 
 /**
  * An interface for a language translation service. Follows the Drupal translation

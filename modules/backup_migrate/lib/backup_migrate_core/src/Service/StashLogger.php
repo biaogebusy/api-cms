@@ -1,12 +1,6 @@
 <?php
-/**
- * @file
- * Contains BackupMigrate\Core\Service\StashLogger.
- */
-
 
 namespace BackupMigrate\Core\Service;
-
 
 use Psr\Log\AbstractLogger;
 

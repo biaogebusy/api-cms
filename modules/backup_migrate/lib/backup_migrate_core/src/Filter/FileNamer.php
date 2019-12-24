@@ -1,12 +1,6 @@
 <?php
-/**
- * @file
- * Contains BackupMigrate\Core\Filter\FileNamer.
- */
-
 
 namespace BackupMigrate\Core\Filter;
-
 
 use BackupMigrate\Core\Config\Config;
 use BackupMigrate\Core\Config\ValidationError;
@@ -111,7 +105,7 @@ class FileNamer extends PluginBase implements FileProcessorInterface {
       $name = $this->confGet('filename');
     }
     if ($this->confGet('timestamp')) {
-      $name .= '-' . gmdate($this->confGet('timestamp_format'));
+      $name .= '-' . date($this->confGet('timestamp_format'));
     }
     $file->setName($name);
     return $file;

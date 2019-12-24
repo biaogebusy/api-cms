@@ -1,11 +1,6 @@
 <?php
-/**
- * @file
- * Contains \BackupMigrate\Core\Services\TempFileManagerInterface.
- */
 
 namespace BackupMigrate\Core\File;
-
 
 /**
  * Class TempFileManager.

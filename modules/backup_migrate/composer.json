@@ -10,10 +10,16 @@
       "name": "Ronan Dowling",
       "homepage": "https://www.drupal.org/u/ronan",
       "role": "Maintainer"
+    },
+    {
+      "name": "Alex Andrascu",
+      "homepage": "https://www.drupal.org/u/alex-andrascu",
+      "role": "Maintainer"
     }
   ],
   "support": {
     "issues": "https://www.drupal.org/project/issues/backup_migrate",
-    "source": "http://cgit.drupalcode.org/backup_migrate"
+    "source": "http://cgit.drupalcode.org/backup_migrate",
+    "slack": "https://drupal.slack.com/messages/C7C4M4QJV/details/"
   }
 }

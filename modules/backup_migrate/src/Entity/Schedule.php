@@ -60,12 +60,13 @@ class Schedule extends ConfigEntityBase {
    */
   public function run(BackupMigrateInterface $bam, $force = FALSE) {
     $next_run_at = $this->getNextRun();
-    $should_run_now = (REQUEST_TIME >= $next_run_at);
+    $time = \Drupal::time();
+    $should_run_now = ($time->getRequestTime() >= $next_run_at);
     $enabled = $this->get('enabled');
     if ($force || ($should_run_now && $enabled)) {
       // Set the last run time before attempting backup.
       // This will prevent a failing schedule from retrying on every cron run.
-      $this->setLastRun(REQUEST_TIME);
+      $this->setLastRun($time->getRequestTime());
 
       try {
         $config = [];
@@ -149,7 +150,7 @@ class Schedule extends ConfigEntityBase {
     if ($last_run_at) {
       return $last_run_at + $this->get('period');
     }
-    return REQUEST_TIME - 1;
+    return \Drupal::time()->getRequestTime() - 1;
   }
 
   /**

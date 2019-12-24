@@ -1,16 +1,12 @@
 <?php
 
-/**
- * @file
- * Contains \BackupMigrate\Core\Services\TempFileManagerInterface.
- */
-
 namespace BackupMigrate\Core\File;
 
 /**
  * Provides a service to provision temp files in the correct place for the environment.
  */
 interface TempFileAdapterInterface {
+
   /**
    * Get a temporary file that can be written to.
    *

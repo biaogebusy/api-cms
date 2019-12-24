@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \BackupMigrate\Core\Plugin\PluginManagerInterface.
- */
-
 namespace BackupMigrate\Core\Plugin;
 
 use \BackupMigrate\Core\Config\ConfigInterface;
@@ -13,6 +8,7 @@ use \BackupMigrate\Core\Config\ConfigInterface;
  * Manage all of the available Plugins.
  */
 interface PluginManagerInterface {
+
   /**
    * Add an item to the manager.
    *
@@ -30,7 +26,7 @@ interface PluginManagerInterface {
    * @param $id
    *
    * @return \BackupMigrate\Core\Plugin\PluginInterface The item specified by the id or NULL if it doesn't exist.
-   **/
+   */
   public function get($id);
 
   /**

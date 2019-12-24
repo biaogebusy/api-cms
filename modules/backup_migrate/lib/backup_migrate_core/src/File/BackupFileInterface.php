@@ -1,15 +1,12 @@
 <?php
 
-/**
- * @file
- * Contains \BackupMigrate\Core\File\BackupFileInterface.
- */
-
 namespace BackupMigrate\Core\File;
 
 /**
- * Provides a metadata-only file object. If the file needs to be readable or
- * writable use \BackupMigrate\Core\File\BackupFileReadableInterface or
+ * Provides a metadata-only file object.
+ *
+ * If the file needs to be readable or writable use
+ * \BackupMigrate\Core\File\BackupFileReadableInterface or
  * \BackupMigrate\Core\File\BackupFileWritableInterface.
  */
 interface BackupFileInterface {

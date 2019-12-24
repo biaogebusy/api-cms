@@ -1,12 +1,6 @@
 <?php
-/**
- * @file
- * Contains BackupMigrate\Core\Destination\BrowserDownloadDestination.
- */
-
 
 namespace BackupMigrate\Core\Destination;
-
 
 use BackupMigrate\Core\Exception\DestinationNotWritableException;
 use BackupMigrate\Core\File\BackupFileReadableInterface;

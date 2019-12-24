@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \BackupMigrate\Core\Source\DatabaseSource.
- */
-
 namespace BackupMigrate\Core\Source;
 
 use BackupMigrate\Core\Config\Config;

@@ -1,12 +1,6 @@
 <?php
-/**
- * @file
- * Contains BackupMigrate\Core\Environment\MailSender.
- */
-
 
 namespace BackupMigrate\Core\Service;
-
 
 /**
  * Class Mailer.

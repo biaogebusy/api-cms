@@ -9,7 +9,6 @@ use Drupal\Core\File\FileSystem;
 use Drupal\Core\StreamWrapper\PrivateStream;
 use BackupMigrate\Core\File\ReadableStreamBackupFile;
 
-
 /**
  * Class DrupalDirectoryDestination.
  *

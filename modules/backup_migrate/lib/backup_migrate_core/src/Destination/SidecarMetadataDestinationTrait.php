@@ -1,10 +1,6 @@
 <?php
-/**
- * @file
- */
 
 namespace BackupMigrate\Core\Destination;
-
 
 use BackupMigrate\Core\Plugin\FileProcessorTrait;
 use BackupMigrate\Core\File\BackupFileInterface;

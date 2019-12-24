@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \BackupMigrate\Core\File\TempFile.
- */
-
 // Must be injected:
 // Temp directory.
 namespace BackupMigrate\Core\File;

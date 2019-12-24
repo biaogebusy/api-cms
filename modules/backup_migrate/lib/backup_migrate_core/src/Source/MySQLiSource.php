@@ -1,18 +1,13 @@
 <?php
-/**
- * @file
- * Contains BackupMigrate\Core\Source\MySQLiSource.
- */
-
 
 namespace BackupMigrate\Core\Source;
-
 
 use BackupMigrate\Core\Exception\BackupMigrateException;
 use BackupMigrate\Core\File\BackupFileReadableInterface;
 use BackupMigrate\Core\File\BackupFileWritableInterface;
 use BackupMigrate\Core\Plugin\PluginCallerTrait;
 use BackupMigrate\Core\Plugin\PluginCallerInterface;
+use PDO;
 
 /**
  * Class MySQLiSource.
@@ -125,16 +120,64 @@ class MySQLiSource extends DatabaseSource implements PluginCallerInterface {
   protected function _getConnection() {
     if (!$this->connection) {
       if (!function_exists('mysqli_init') && !extension_loaded('mysqli')) {
-        throw new BackupMigrateException('Cannot connect to the database becuase the MySQLi extension is missing.');
+        throw new BackupMigrateException('Cannot connect to the database because the MySQLi extension is missing.');
       }
-      $this->connection = new \mysqli(
+
+      $pdo_config = $this->confGet('pdo');
+
+      $ssl_config = [
+        'key' => (!empty($pdo_config[PDO::MYSQL_ATTR_SSL_KEY])) ? $pdo_config[PDO::MYSQL_ATTR_SSL_KEY] : NULL,
+        'cert' => (!empty($pdo_config[PDO::MYSQL_ATTR_SSL_CERT])) ? $pdo_config[PDO::MYSQL_ATTR_SSL_CERT] : NULL,
+        'ca' => (!empty($pdo_config[PDO::MYSQL_ATTR_SSL_CA])) ? $pdo_config[PDO::MYSQL_ATTR_SSL_CA] : NULL,
+        'capath' => (!empty($pdo_config[PDO::MYSQL_ATTR_SSL_CAPATH])) ? $pdo_config[PDO::MYSQL_ATTR_SSL_CAPATH] : NULL,
+        'cypher' => (!empty($pdo_config[PDO::MYSQL_ATTR_SSL_CIPHER])) ? $pdo_config[PDO::MYSQL_ATTR_SSL_CIPHER] : NULL,
+      ];
+
+      if (defined('PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT')) {
+        $ssl_config['verify_server_cert'] = (isset($pdo_config[PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT])) ? $pdo_config[PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT] : TRUE;
+      }
+      else {
+        $ssl_config['verify_server_cert'] = TRUE;
+      }
+
+      if ($ssl_config['key'] || $ssl_config['cert'] || $ssl_config['ca'] || $ssl_config['capath'] || $ssl_config['cypher']) {
+
+        // Provide a workaround for PHP7 peer certificate verification issues:
+        // - https://bugs.php.net/bug.php?id=68344
+        // - https://bugs.php.net/bug.php?id=71003
+        if ($ssl_config['verify_server_cert']) {
+          $flags = MYSQLI_CLIENT_SSL;
+        }
+        else {
+          $flags = MYSQLI_CLIENT_SSL_DONT_VERIFY_SERVER_CERT;
+        }
+
+        // Connect using PDO SSL config.
+        $this->connection = new \mysqli();
+
+        $this->connection->ssl_set($ssl_config['key'], $ssl_config['cert'], $ssl_config['ca'], $ssl_config['capath'], $ssl_config['cypher']);
+
+        $this->connection->real_connect(
+          $this->confGet('host'),
+          $this->confGet('username'),
+          $this->confGet('password'),
+          $this->confGet('database'),
+          $this->confGet('port'),
+          $this->confGet('socket'),
+          $flags
+        );
+      }
+      else {
+        $this->connection = new \mysqli(
           $this->confGet('host'),
           $this->confGet('username'),
           $this->confGet('password'),
           $this->confGet('database'),
           $this->confGet('port'),
           $this->confGet('socket')
-      );
+        );
+      }
+
       // Throw an error on fail.
       if ($this->connection->connect_errno || !$this->connection->ping()) {
         throw new BackupMigrateException("Failed to connect to MySQL server.");

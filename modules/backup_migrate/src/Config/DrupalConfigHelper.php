@@ -14,6 +14,7 @@ use Drupal\Core\Form\FormStateInterface;
  * @package BackupMigrate\Drupal\Config
  */
 class DrupalConfigHelper {
+
   /**
    * Build the configuration form for all plugins in a manager.
    *

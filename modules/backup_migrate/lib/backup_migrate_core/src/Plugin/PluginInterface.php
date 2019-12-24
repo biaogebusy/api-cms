@@ -1,15 +1,13 @@
 <?php
 
-/**
- * @file
- * Contains \BackupMigrate\Core\Plugin\PluginInterface.
- */
-
 namespace BackupMigrate\Core\Plugin;
 
-
-// use \BackupMigrate\Core\Services\ApplicationInterface;
 /**
+ * An interface to describe a Backup and Migrate plugin.
+ *
+ * Plugins take care of all elements of the backup process and can be configured
+ * externally.
+ *
  * All of the work is done in plugins. Therefore they may need injected:.
  *
  * Sources
@@ -22,12 +20,8 @@ namespace BackupMigrate\Core\Plugin;
  * TempFileManager
  *  TempFileAdapter.
  */
-
-/**
- * An interface to describe a Backup and Migrate plugin. Plugins take care
- * of all elements of the backup process and can be configured externally.
- */
 interface PluginInterface {
+
   /**
    * Get a list of supported operations and their weight.
    *

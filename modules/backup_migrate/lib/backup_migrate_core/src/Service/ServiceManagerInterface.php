@@ -1,11 +1,6 @@
 <?php
-/**
- * @file
- */
 
 namespace BackupMigrate\Core\Service;
-
-
 
 /**
  * Interface ServiceManagerInterface.

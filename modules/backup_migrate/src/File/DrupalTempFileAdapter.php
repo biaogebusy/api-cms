@@ -24,7 +24,7 @@ class DrupalTempFileAdapter extends TempFileAdapter implements TempFileAdapterIn
    * Construct a manager.
    *
    * @param \Drupal\Core\File\FileSystem $filesystem
-   *   A file path or stream URL for the temp directory
+   *   A file path or stream URL for the temp directory.
    * @param string $dir
    *   The directory to save to.
    * @param string $prefix

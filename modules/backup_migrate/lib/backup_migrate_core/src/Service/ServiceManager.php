@@ -1,12 +1,6 @@
 <?php
-/**
- * @file
- * Contains BackupMigrate\Core\Service\ServiceManager.
- */
-
 
 namespace BackupMigrate\Core\Service;
-
 
 /**
  * A very simple service locator. Does not handle dependency injection but could

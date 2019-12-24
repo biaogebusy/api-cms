@@ -1,9 +1,4 @@
 <?php
-/**
- * @file
- * Contains BackupMigrate\Core\Source\FileDirectorySource.
- */
-
 
 namespace BackupMigrate\Core\Source;
 
@@ -26,7 +21,6 @@ use BackupMigrate\Core\Service\ArchiveWriterInterface;
 class FileDirectorySource extends PluginBase implements SourceInterface, FileProcessorInterface, PluginCallerInterface {
   use FileProcessorTrait;
   use PluginCallerTrait;
-
 
   /**
    * @var \BackupMigrate\Core\Service\ArchiveWriterInterface

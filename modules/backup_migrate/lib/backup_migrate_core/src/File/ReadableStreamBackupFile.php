@@ -1,8 +1,4 @@
 <?php
-/**
- * @file
- * Contains BackupMigrate\Core\File\ReadableStream.
- */
 
 namespace BackupMigrate\Core\File;
 

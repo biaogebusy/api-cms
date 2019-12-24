@@ -1,10 +1,6 @@
 <?php
-/**
- * @file
- */
 
 namespace BackupMigrate\Core\Source;
-
 
 /**
  * Interface DatabaseSourceInterface.
@@ -12,6 +8,7 @@ namespace BackupMigrate\Core\Source;
  * @package BackupMigrate\Core\Source
  */
 interface DatabaseSourceInterface extends SourceInterface {
+
   /**
    * Get a list of tables in this source.
    */

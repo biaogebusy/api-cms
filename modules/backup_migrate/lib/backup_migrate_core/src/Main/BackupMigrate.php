@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \BackupMigrate\Core\Services\BackupMigrate.
- */
-
 namespace BackupMigrate\Core\Main;
 
 use BackupMigrate\Core\Config\ConfigInterface;
@@ -148,7 +143,7 @@ class BackupMigrate implements BackupMigrateInterface {
 
       // Do the actual source restore.
       $import_result = $source->importFromFile($file);
-      if(!$import_result) {
+      if (!$import_result) {
         throw new BackupMigrateException('The file could not be imported.');
       }
 

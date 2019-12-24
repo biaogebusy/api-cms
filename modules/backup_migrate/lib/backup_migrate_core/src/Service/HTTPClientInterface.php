@@ -1,9 +1,5 @@
 <?php
 
-/**
- * @file
- */
-
 namespace BackupMigrate\Core\Service;
 
 use BackupMigrate\Core\File\ReadableStreamBackupFile;

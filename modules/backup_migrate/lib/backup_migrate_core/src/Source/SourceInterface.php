@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \BackupMigrate\Core\Source\SourceInterface.
- */
-
 namespace BackupMigrate\Core\Source;
 
 use BackupMigrate\Core\Plugin\PluginInterface;
@@ -14,6 +9,7 @@ use BackupMigrate\Core\File\BackupFileReadableInterface;
  * Provides an interface defining a backup source.
  */
 interface SourceInterface extends PluginInterface {
+
   /**
    * Export this source to the given temp file. This should be the main
    * back up function for this source.

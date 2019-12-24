@@ -1,8 +1,4 @@
 <?php
-/**
- * @file
- * Contains ${NAMESPACE}\BackupMirgateException.
- */
 
 namespace BackupMigrate\Core\Exception;
 
