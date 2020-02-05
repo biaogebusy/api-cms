@@ -1,0 +1,12 @@
+name: JSON API Hypermedia
+type: module
+description: Complements the JSON API module with Hypermedia as the Engine of Application State
+core: 8.x
+package: Web services
+dependencies:
+  - drupal:system (>=8.7)
+
+# Information added by Drupal.org packaging script on 2020-01-31
+version: '8.x-1.5'
+project: 'jsonapi_hypermedia'
+datestamp: 1580498790
