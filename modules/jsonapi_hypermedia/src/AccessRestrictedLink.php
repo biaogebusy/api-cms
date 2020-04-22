@@ -63,7 +63,7 @@ final class AccessRestrictedLink implements CacheableDependencyInterface {
         $cacheable_metadata->addCacheableDependency($anchor_href);
         $target_attributes['anchor'] = $anchor_href->getGeneratedUrl();
       }
-      $this->inner = new DecoratedLink($cacheable_metadata, $target, [$link_relation_type], $target_attributes);
+      $this->inner = new DecoratedLink($cacheable_metadata, $target, $link_relation_type, $target_attributes);
     }
   }
 

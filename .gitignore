@@ -43,3 +43,5 @@ sites/simpletest
 # simpletest
 
 .DS_Store
+.user.ini
+.well-known/
